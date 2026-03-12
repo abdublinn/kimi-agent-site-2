@@ -44,17 +44,12 @@ export function Hero() {
 
       <div className="relative z-10 container-main py-20">
         <div className="max-w-3xl">
-          <h1 className="animate-item text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 tracking-tight">
-            Маркетплейсы
+          <h1 className="animate-item text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">
+            Маркетплейсы для мебельной фабрики: стратегия до тактики
           </h1>
 
-          <p className="animate-item text-xl md:text-2xl text-white/85 mb-6">
-            Мебельный рынок в эпоху маркетплейсов. 2018-2026
-          </p>
-
-          <p className="animate-item text-lg text-white/70 mb-8 max-w-2xl leading-relaxed">
-            Wordstat говорит, что рынок умирает. Ozon говорит, что он растет.
-            Оба правы. Этот отчет - попытка увидеть рынок целиком.
+          <p className="animate-item text-lg md:text-xl text-white/85 mb-8 max-w-2xl leading-relaxed">
+            Данные, методология и выводы для тех, кто хочет выйти правильно и арабатывать
           </p>
 
           <div className="animate-item flex items-center gap-4 text-sm text-white/40 mb-10">
