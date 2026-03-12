@@ -3,6 +3,7 @@ import { ArrowDown, BookOpen, MessageCircle } from 'lucide-react';
 
 export function Hero() {
   const heroRef = useRef<HTMLDivElement>(null);
+  const imageBase = `${import.meta.env.BASE_URL}images/`;
 
   useEffect(() => {
     const hero = heroRef.current;
@@ -82,7 +83,7 @@ export function Hero() {
             <div id="about-author" className="animate-item bg-white/10 border border-white/15 backdrop-blur-sm rounded-2xl p-5 lg:p-6">
               <div className="flex flex-col sm:flex-row gap-4 sm:items-center">
                 <img
-                  src="/images/author-photo.png"
+                  src={`${imageBase}author-photo.png`}
                   alt="Александр Борисович Дублин"
                   className="w-24 h-24 rounded-xl object-cover border border-white/20"
                 />
@@ -124,7 +125,7 @@ export function Hero() {
           <div className="animate-item hidden lg:block">
             <div className="w-64 xl:w-72 mx-auto rounded-2xl overflow-hidden border border-white/20 shadow-2xl">
               <img
-                src="/images/author-hero.png"
+                src={`${imageBase}author-hero.png`}
                 alt="Александр Борисович Дублин"
                 className="w-full h-[380px] object-cover"
               />
