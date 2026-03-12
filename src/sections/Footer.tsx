@@ -1,16 +1,28 @@
 import { MessageCircle, BookOpen } from 'lucide-react';
 
 export function Footer() {
+  const imageBase = `${import.meta.env.BASE_URL}images/`;
+
   return (
     <footer className="bg-[#1A1A1A] text-white py-12 lg:py-16">
       <div className="container-main max-w-3xl">
         <div className="text-center mb-8">
+          <div className="w-20 h-20 mx-auto mb-4 rounded-full overflow-hidden border border-white/20">
+            <img
+              src={`${imageBase}author-photo.png`}
+              alt="Александр Борисович Дублин"
+              className="w-full h-full object-cover"
+            />
+          </div>
           <h3 className="text-xl font-bold mb-2">Александр Борисович Дублин</h3>
-          <p className="text-white/70 text-sm">
-            Бизнес-аналитик и консультант
-          </p>
+          <p className="text-white/70 text-sm">Бизнес-аналитик и консультант</p>
           <p className="text-white/50 text-xs mt-1">
-            Специализация: системный анализ рынков, маркетинговые стратегии, управленческий учёт, методологии принятия решений
+            Специализация: системный анализ рынков, маркетинговые стратегии, управленческий учёт,
+            методологии принятия решений
+          </p>
+          <p className="text-white/75 text-sm mt-4 max-w-xl mx-auto">
+            Если вам нужен спокойный взгляд со стороны на стратегию выхода на маркетплейсы,
+            буду рад обсудить вашу задачу в личном сообщении.
           </p>
         </div>
 
