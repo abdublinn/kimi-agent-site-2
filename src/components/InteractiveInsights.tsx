@@ -40,12 +40,35 @@ const yandexTrendData = [
   { query: 'купить матрас', y2020: 453584, y2026: 229332 },
 ];
 
+const clicksComparisonData = [
+  { query: 'диван', wb: 505661, ym: 142026 },
+  { query: 'диван раскладной', wb: 929775, ym: 115667 },
+  { query: 'диван угловой', wb: 322820, ym: 54403 },
+  { query: 'шкаф для одежды', wb: 1600105, ym: 144620 },
+];
+
+const splitByCategoryData = [
+  { category: 'Диваны', wb: 61, ozon: 39 },
+  { category: 'Шкафы', wb: 62, ozon: 38 },
+  { category: 'Комоды', wb: 64, ozon: 36 },
+  { category: 'Кухни', wb: 28, ozon: 72 },
+];
+
+const brandGrowthData = [
+  { brand: 'Нонтон', y2020: 50027, y2026: 182680 },
+  { brand: 'Диван Босс', y2020: 17321, y2026: 73762 },
+  { brand: 'Уютная Логика', y2020: 1066, y2026: 14713 },
+  { brand: 'Много Мебели', y2020: 458166, y2026: 116189 },
+  { brand: 'Первый Мебельный', y2020: 75507, y2026: 36677 },
+];
+
 const chartConfig = {
   yandex: { label: 'Яндекс', color: '#6B7280' },
   wb: { label: 'Wildberries', color: '#8E24AA' },
   ozon: { label: 'Ozon', color: '#1976D2' },
   y2020: { label: '2020', color: '#9CA3AF' },
   y2026: { label: '2026', color: '#E53935' },
+  ym: { label: 'Яндекс.Маркет', color: '#16A34A' },
 } satisfies ChartConfig;
 
 export function InteractiveInsights() {
@@ -64,6 +87,9 @@ export function InteractiveInsights() {
             <TabsTrigger value="revenue">Выручка</TabsTrigger>
             <TabsTrigger value="avg-check">Средний чек</TabsTrigger>
             <TabsTrigger value="yandex">Яндекс 2020-2026</TabsTrigger>
+            <TabsTrigger value="clicks">Клики WB vs YM</TabsTrigger>
+            <TabsTrigger value="split">Доли WB/Ozon</TabsTrigger>
+            <TabsTrigger value="brands">Бренды</TabsTrigger>
           </TabsList>
 
           <TabsContent value="demand" className="mt-2">
@@ -139,6 +165,54 @@ export function InteractiveInsights() {
                   <Bar dataKey="y2020" fill="var(--color-y2020)" radius={4} />
                   <Bar dataKey="y2026" fill="var(--color-y2026)" radius={4} />
                 </BarChart>
+              </ChartContainer>
+            </div>
+          </TabsContent>
+
+          <TabsContent value="clicks" className="mt-2">
+            <div className="rounded-lg border border-gray-200 p-4">
+              <ChartContainer config={chartConfig} className="h-[360px] w-full">
+                <BarChart data={clicksComparisonData}>
+                  <CartesianGrid vertical={false} />
+                  <XAxis dataKey="query" tickLine={false} axisLine={false} />
+                  <YAxis tickFormatter={(v) => `${Math.round(v / 1000)}k`} />
+                  <ChartTooltip content={<ChartTooltipContent />} />
+                  <Legend content={<ChartLegendContent />} />
+                  <Bar dataKey="wb" fill="var(--color-wb)" radius={4} />
+                  <Bar dataKey="ym" fill="var(--color-ym)" radius={4} />
+                </BarChart>
+              </ChartContainer>
+            </div>
+          </TabsContent>
+
+          <TabsContent value="split" className="mt-2">
+            <div className="rounded-lg border border-gray-200 p-4">
+              <ChartContainer config={chartConfig} className="h-[360px] w-full">
+                <BarChart data={splitByCategoryData}>
+                  <CartesianGrid vertical={false} />
+                  <XAxis dataKey="category" tickLine={false} axisLine={false} />
+                  <YAxis tickFormatter={(v) => `${v}%`} />
+                  <ChartTooltip content={<ChartTooltipContent />} />
+                  <Legend content={<ChartLegendContent />} />
+                  <Bar dataKey="wb" fill="var(--color-wb)" radius={4} />
+                  <Bar dataKey="ozon" fill="var(--color-ozon)" radius={4} />
+                </BarChart>
+              </ChartContainer>
+            </div>
+          </TabsContent>
+
+          <TabsContent value="brands" className="mt-2">
+            <div className="rounded-lg border border-gray-200 p-4">
+              <ChartContainer config={chartConfig} className="h-[360px] w-full">
+                <LineChart data={brandGrowthData}>
+                  <CartesianGrid vertical={false} />
+                  <XAxis dataKey="brand" tickLine={false} axisLine={false} />
+                  <YAxis tickFormatter={(v) => `${Math.round(v / 1000)}k`} />
+                  <ChartTooltip content={<ChartTooltipContent />} />
+                  <Legend content={<ChartLegendContent />} />
+                  <Line dataKey="y2020" type="monotone" stroke="var(--color-y2020)" strokeWidth={2} />
+                  <Line dataKey="y2026" type="monotone" stroke="var(--color-y2026)" strokeWidth={2} />
+                </LineChart>
               </ChartContainer>
             </div>
           </TabsContent>
