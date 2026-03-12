@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { ArrowDown, BookOpen, MessageCircle } from 'lucide-react';
+import { ArrowDown, MessageCircle } from 'lucide-react';
 
 export function Hero() {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -36,104 +36,70 @@ export function Hero() {
   };
 
   return (
-    <section ref={heroRef} className="relative min-h-screen pt-20 pb-14 overflow-hidden bg-[#0F2344]">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(70,110,180,.35),transparent_45%),radial-gradient(circle_at_90%_15%,rgba(80,120,200,.25),transparent_40%)]" />
-      <div className="absolute -left-32 top-1/2 h-px w-[160%] -translate-y-24 rotate-[-18deg] bg-white/10" />
-      <div className="absolute -left-32 top-1/2 h-px w-[160%] translate-y-24 rotate-[-18deg] bg-white/10" />
-      <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-white/20 to-transparent" />
+    <section ref={heroRef} className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#1e3a5f]">
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute -left-24 top-1/3 w-[160%] h-px rotate-[-18deg] bg-white/10" />
+        <div className="absolute -left-24 top-2/3 w-[160%] h-px rotate-[-18deg] bg-white/10" />
+      </div>
 
-      <div className="container-main relative z-10">
-        <div className="grid lg:grid-cols-[1fr_340px] gap-10 items-center max-w-6xl mx-auto">
-          <div>
-            <div className="animate-item">
-              <span className="inline-block px-3 py-1 text-xs font-medium text-white/80 bg-white/10 rounded-full mb-6">
-                Март 2026
-              </span>
-            </div>
+      <div className="relative z-10 container-main py-20">
+        <div className="max-w-3xl">
+          <h1 className="animate-item text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 tracking-tight">
+            Маркетплейсы
+          </h1>
 
-            <h1 className="animate-item text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-5">
-              Маркетплейсы для мебельной фабрики:
-              <br />
-              <span className="text-[#F59E0B]">стратегия</span> vs. <span className="text-white/70">тактика</span>
-            </h1>
+          <p className="animate-item text-xl md:text-2xl text-white/85 mb-6">
+            Мебельный рынок в эпоху маркетплейсов. 2018-2026
+          </p>
 
-            <p className="animate-item text-lg sm:text-xl text-white/80 mb-8 max-w-2xl">
-              Данные, методология и выводы для тех, кто хочет выйти правильно.
-            </p>
+          <p className="animate-item text-lg text-white/70 mb-8 max-w-2xl leading-relaxed">
+            Wordstat говорит, что рынок умирает. Ozon говорит, что он растет.
+            Оба правы. Этот отчет - попытка увидеть рынок целиком.
+          </p>
 
-            <div className="animate-item flex flex-wrap items-center gap-4 mb-10">
-              <button
-                onClick={scrollToContent}
-                className="inline-flex items-center gap-2 px-6 py-3 bg-[#F59E0B] text-white font-semibold rounded-lg hover:bg-amber-500 transition-all hover:scale-[1.02] active:scale-[0.98]"
-              >
-                Читать отчет
-                <ArrowDown className="w-4 h-4" />
-              </button>
-              <a
-                href="https://t.me/AleksandrBorisovich73"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 border border-white/30 text-white font-medium rounded-lg hover:bg-white/10 transition-all"
-              >
-                <MessageCircle className="w-4 h-4" />
-                Связаться с автором
-              </a>
-            </div>
-
-            <div id="about-author" className="animate-item bg-white/10 border border-white/15 backdrop-blur-sm rounded-2xl p-5 lg:p-6">
-              <div className="flex flex-col sm:flex-row gap-4 sm:items-center">
-                <img
-                  src={`${imageBase}author-photo.png`}
-                  alt="Александр Борисович Дублин"
-                  className="w-24 h-24 rounded-xl object-cover border border-white/20"
-                />
-                <div>
-                  <p className="text-white text-xl font-semibold">Александр Борисович Дублин</p>
-                  <p className="text-white/80 text-sm mt-1">
-                    Бизнес-аналитик и консультант. Маркетинг с большой буквы М: стратегия, позиционирование, аналитика рынка.
-                  </p>
-                  <div className="flex flex-wrap gap-3 mt-3 text-xs">
-                    <span className="px-2.5 py-1 rounded-full bg-white/10 text-white/85">Системный анализ</span>
-                    <span className="px-2.5 py-1 rounded-full bg-white/10 text-white/85">Маркетплейсы</span>
-                    <span className="px-2.5 py-1 rounded-full bg-white/10 text-white/85">Стратегия бренда</span>
-                  </div>
-                  <div className="flex flex-wrap gap-3 mt-4">
-                    <a
-                      href="https://t.me/ab_dublin"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-white/90 hover:text-white text-sm"
-                    >
-                      <BookOpen className="w-4 h-4" />
-                      Telegram-канал
-                    </a>
-                    <a
-                      href="https://dzen.ru/dbs_dubas"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-white/90 hover:text-white text-sm"
-                    >
-                      <BookOpen className="w-4 h-4" />
-                      Блог на Дзене
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div className="animate-item flex items-center gap-4 text-sm text-white/40 mb-10">
+            <span>Александр Дублин</span>
+            <span>•</span>
+            <span>Март 2026</span>
+            <span>•</span>
+            <span>Версия 2</span>
           </div>
 
-          <div className="animate-item hidden lg:block">
-            <div className="w-64 xl:w-72 mx-auto rounded-2xl overflow-hidden border border-white/20 shadow-2xl">
+          <div className="animate-item flex flex-wrap items-center gap-4">
+            <button
+              onClick={scrollToContent}
+              className="inline-flex items-center gap-2 px-6 py-3 bg-[#f59e0b] text-white font-semibold rounded-md hover:bg-[#d97706] transition-all"
+            >
+              Читать отчет
+              <ArrowDown className="w-4 h-4" />
+            </button>
+            <a
+              href="https://t.me/AleksandrBorisovich73"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-white/75 hover:text-white transition-colors"
+            >
+              <MessageCircle className="w-4 h-4" />
+              Связаться с автором
+            </a>
+          </div>
+        </div>
+
+        <div className="absolute bottom-12 right-12 hidden lg:block animate-item">
+          <div className="flex flex-col items-center">
+            <div className="w-32 h-40 rounded-xl border-2 border-white/20 overflow-hidden shadow-2xl">
               <img
                 src={`${imageBase}author-hero.png`}
-                alt="Александр Борисович Дублин"
-                className="w-full h-[380px] object-cover"
+                alt="Александр Дублин"
+                className="w-full h-full object-cover"
               />
             </div>
-            <p className="text-center text-white/70 mt-3 text-sm">Александр Дублин</p>
+            <span className="mt-3 text-sm text-white/50">Александр Дублин</span>
           </div>
         </div>
       </div>
+
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#eaf1fb] to-transparent" />
     </section>
   );
 }

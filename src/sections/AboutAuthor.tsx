@@ -1,78 +1,77 @@
-import { ArrowRight, BarChart3, BookOpen, Brain, MessageCircle, Target } from 'lucide-react';
+import { BarChart3, Brain, MessageCircle, Target } from 'lucide-react';
 
 const expertiseItems = [
-  {
-    icon: BarChart3,
-    title: 'Управленческий учет и системы отчетности',
-  },
-  {
-    icon: Target,
-    title: 'Стратегическое позиционирование и миссия бренда',
-  },
-  {
-    icon: Brain,
-    title: 'Анализ данных и маркетинг с большой буквы М',
-  },
-  {
-    icon: MessageCircle,
-    title: 'Прямые консультации для мебельного бизнеса',
-  },
+  { icon: BarChart3, title: 'Управленческий учет и системы отчетности' },
+  { icon: Target, title: 'Стратегическое позиционирование и миссия' },
+  { icon: Brain, title: 'Анализ данных с применением ИИ' },
+  { icon: MessageCircle, title: 'Прямые консультации для бизнеса' },
 ];
 
 export function AboutAuthor() {
+  const imageBase = `${import.meta.env.BASE_URL}images/`;
+
   return (
-    <section id="about-author" className="section-padding bg-[#F8FAFC] border-t border-gray-100">
-      <div className="container-main max-w-5xl">
-        <h2 className="text-2xl lg:text-3xl font-bold mb-3">Об авторе</h2>
-        <p className="text-[#6B6B6B] max-w-3xl mb-8">
-          Александр Борисович Дублин. Бизнес-аналитик и консультант. Работаю на стыке аналитики,
-          кибернетики и теории систем, помогаю фабрикам строить стратегию выхода на маркетплейсы,
-          а не только тактику карточек и рекламных ставок.
-        </p>
-
-        <div className="grid sm:grid-cols-2 gap-4 mb-8">
-          {expertiseItems.map((item) => (
-            <div
-              key={item.title}
-              className="flex items-start gap-3 p-4 rounded-lg border border-gray-200 bg-white hover:shadow-sm transition-shadow"
-            >
-              <div className="p-2 rounded-lg bg-red-50">
-                <item.icon className="w-5 h-5 text-[#E53935]" />
-              </div>
-              <span className="text-sm text-[#1A1A1A] leading-snug">{item.title}</span>
+    <section id="about-author" className="bg-[#eaf1fb] section-padding">
+      <div className="container-main max-w-6xl">
+        <div className="grid md:grid-cols-[220px_1fr] gap-7 lg:gap-9 items-start">
+          <div className="w-full max-w-[220px]">
+            <div className="rounded-xl overflow-hidden shadow-md">
+              <img
+                src={`${imageBase}author-photo.png`}
+                alt="Александр Дублин"
+                className="w-full h-[270px] object-cover"
+              />
             </div>
-          ))}
-        </div>
+          </div>
 
-        <div className="flex flex-wrap gap-3">
-          <a
-            href="https://t.me/AleksandrBorisovich73"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-[#E53935] text-[#E53935] hover:bg-red-50 transition-colors text-sm font-medium"
-          >
-            <MessageCircle className="w-4 h-4" />
-            Написать напрямую
-            <ArrowRight className="w-4 h-4" />
-          </a>
-          <a
-            href="https://t.me/ab_dublin"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-gray-300 text-[#1A1A1A] hover:bg-gray-50 transition-colors text-sm font-medium"
-          >
-            <BookOpen className="w-4 h-4" />
-            Telegram-канал
-          </a>
-          <a
-            href="https://dzen.ru/dbs_dubas"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-gray-300 text-[#1A1A1A] hover:bg-gray-50 transition-colors text-sm font-medium"
-          >
-            <BookOpen className="w-4 h-4" />
-            Блог на Дзене
-          </a>
+          <div>
+            <h2 className="text-4xl font-bold text-[#0f172a] mb-2">Александр Дублин</h2>
+            <p className="text-[#4b5563] mb-6 text-lg">
+              Бизнес-аналитик и консультант. Работает на стыке аналитики, кибернетики и теории
+              систем.
+            </p>
+
+            <div className="grid sm:grid-cols-2 gap-3 mb-6">
+              {expertiseItems.map((item) => (
+                <div
+                  key={item.title}
+                  className="flex items-center gap-3 p-3 bg-white/80 rounded-lg border border-[#d8e3f2]"
+                >
+                  <div className="p-2 bg-[#f3f6fb] rounded-md">
+                    <item.icon className="w-4 h-4 text-[#1f3b63]" />
+                  </div>
+                  <span className="text-sm text-[#334155]">{item.title}</span>
+                </div>
+              ))}
+            </div>
+
+            <div className="flex flex-wrap gap-3">
+              <a
+                href="https://t.me/ab_dublin"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 text-sm rounded-md border border-[#334155] text-[#334155] hover:bg-white/70 transition-colors"
+              >
+                Telegram-канал автора
+              </a>
+              <a
+                href="https://t.me/AleksandrBorisovich73"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 text-sm rounded-md border border-[#334155] text-[#334155] hover:bg-white/70 transition-colors"
+              >
+                Написать напрямую
+              </a>
+              <a
+                href="https://dzen.ru/dbs_dubas"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 text-sm rounded-md border border-[#334155] text-[#334155] hover:bg-white/70 transition-colors"
+              >
+                Блог на Дзене
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>

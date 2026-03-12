@@ -4,6 +4,7 @@ import { Quote } from './sections/Quote';
 import { Section } from './components/Section';
 import { DataTable } from './components/DataTable';
 import { InteractiveInsights } from './components/InteractiveInsights';
+import { AboutAuthor } from './sections/AboutAuthor';
 import { Footer } from './sections/Footer';
 
 // Table column definitions
@@ -276,6 +277,7 @@ function App() {
       
       <main>
         <Hero />
+        <AboutAuthor />
         
         <Quote>
           Маркетинг — это не то, что вы делаете с продуктом.
