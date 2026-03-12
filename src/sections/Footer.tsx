@@ -14,7 +14,7 @@ export function Footer() {
               className="w-full h-full object-cover"
             />
           </div>
-          <h3 className="text-xl font-bold mb-2">Александр Борисович Дублин</h3>
+          <h3 className="text-xl font-bold mb-2">Дублин Александр Борисович</h3>
           <p className="text-white/70 text-sm">Бизнес-аналитик и консультант</p>
           <p className="text-white/50 text-xs mt-1">
             Специализация: системный анализ рынков, маркетинговые стратегии, управленческий учёт,
