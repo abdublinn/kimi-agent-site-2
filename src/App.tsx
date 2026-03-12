@@ -312,7 +312,7 @@ function App() {
         <Section
           id="part1"
           title="Часть I. Три уровня Маркетинга"
-          imageSrc={`${sectionImageBase}02.png`}
+          imageSrc={`${sectionImageBase}05.png`}
           imageAlt="Иллюстрация про три уровня маркетинга"
         >
           <p className="mb-6">
@@ -403,7 +403,7 @@ function App() {
         <Section
           id="part2"
           title="Часть II. Контекст: что произошло с рынком за шесть лет"
-          imageSrc={`${sectionImageBase}03.png`}
+          imageSrc={`${sectionImageBase}02.png`}
           imageAlt="Иллюстрация миграции спроса между платформами"
         >
           <p className="mb-6">
@@ -471,7 +471,7 @@ function App() {
         <Section
           id="part4"
           title="Часть IV. Где ищут: сравнение поискового спроса WB vs Ozon"
-          imageSrc={`${sectionImageBase}05.png`}
+          imageSrc={`${sectionImageBase}06.png`}
           imageAlt="Иллюстрация поискового спроса на WB и Ozon"
         >
           <h3 className="text-xl font-bold mt-4 mb-4">Общая картина по категориям</h3>
@@ -514,7 +514,7 @@ function App() {
         <Section
           id="part5"
           title="Часть V. Где листают: WB vs Яндекс.Маркет по кликам в карточку"
-          imageSrc={`${sectionImageBase}06.png`}
+          imageSrc={`${sectionImageBase}08.png`}
           imageAlt="Иллюстрация сравнения кликов в карточку"
         >
           <p className="mb-6">
@@ -545,7 +545,7 @@ function App() {
         <Section
           id="part6"
           title="Часть VI. Где деньги: сравнение выручки WB и Ozon"
-          imageSrc={`${sectionImageBase}07.png`}
+          imageSrc={`${sectionImageBase}03.png`}
           imageAlt="Иллюстрация перехода от спроса к выручке"
         >
           <p className="mb-6">
@@ -580,7 +580,7 @@ function App() {
         <Section
           id="part7"
           title="Часть VII. Брендовый трафик: кто где существует"
-          imageSrc={`${sectionImageBase}08.png`}
+          imageSrc={`${sectionImageBase}09.png`}
           imageAlt="Иллюстрация брендового трафика"
         >
           <p className="mb-6">
@@ -634,7 +634,7 @@ function App() {
         <Section
           id="part8"
           title="Часть VIII. Стратегическая матрица «с чем и куда»"
-          imageSrc={`${sectionImageBase}09.png`}
+          imageSrc={`${sectionImageBase}10.png`}
           imageAlt="Иллюстрация стратегической матрицы"
         >
           <p className="mb-6">
@@ -686,7 +686,7 @@ function App() {
         <Section
           id="part9"
           title="Часть IX. Чего в этом отчёте нет, намеренно"
-          imageSrc={`${sectionImageBase}10.png`}
+          imageSrc={`${sectionImageBase}11.png`}
           imageAlt="Иллюстрация ограничений текущего отчета"
         >
           <p className="mb-6">
@@ -718,7 +718,7 @@ function App() {
         <Section
           id="conclusion"
           title="Вместо заключения: три вопроса для директора фабрики"
-          imageSrc={`${sectionImageBase}11.png`}
+          imageSrc={`${sectionImageBase}13.png`}
           imageAlt="Иллюстрация к заключению"
         >
           <p className="mb-6">
@@ -751,7 +751,7 @@ function App() {
         <Section
           id="limitations"
           title="Ограничения анализа"
-          imageSrc={`${sectionImageBase}12.png`}
+          imageSrc={`${sectionImageBase}14.png`}
           imageAlt="Иллюстрация методологических ограничений анализа"
         >
           <p className="mb-4">
