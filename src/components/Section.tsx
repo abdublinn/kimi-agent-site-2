@@ -5,11 +5,21 @@ interface SectionProps {
   id: string;
   title: string;
   subtitle?: string;
+  imageSrc?: string;
+  imageAlt?: string;
   children: React.ReactNode;
   className?: string;
 }
 
-export function Section({ id, title, subtitle, children, className = '' }: SectionProps) {
+export function Section({
+  id,
+  title,
+  subtitle,
+  imageSrc,
+  imageAlt,
+  children,
+  className = '',
+}: SectionProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -36,7 +46,7 @@ export function Section({ id, title, subtitle, children, className = '' }: Secti
     <section
       id={id}
       ref={ref}
-      className={`section-padding ${className}`}
+      className={`py-4 lg:py-6 ${className}`}
     >
       <div
         className={`container-main max-w-3xl transition-all duration-500 ${
@@ -72,6 +82,16 @@ export function Section({ id, title, subtitle, children, className = '' }: Secti
             isOpen ? 'max-h-[20000px] opacity-100 mt-6' : 'max-h-0 opacity-0'
           }`}
         >
+          {imageSrc && (
+            <div className="mb-6">
+              <img
+                src={imageSrc}
+                alt={imageAlt || title}
+                className="w-full rounded-xl border border-gray-200"
+                loading="lazy"
+              />
+            </div>
+          )}
           <div className="prose prose-lg max-w-none">{children}</div>
         </div>
       </div>

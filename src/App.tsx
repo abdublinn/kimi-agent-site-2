@@ -270,6 +270,8 @@ const strategyMatrixData = [
   { category: 'Кухни (гарнитуры)', wbQueries: <span className="font-semibold">~70%</span>, wbRevenue: <span className="font-semibold">51%</span>, wbCheck: '6 200 ₽', ozonPrice: '10 823 ₽', priority: <span className="font-semibold">WB трафик, Ozon — дорогой сегм.</span> },
 ];
 
+const sectionImageBase = `${import.meta.env.BASE_URL}section-images/`;
+
 function App() {
   return (
     <div className="min-h-screen bg-white">
@@ -286,7 +288,12 @@ function App() {
         </Quote>
 
         {/* Preface */}
-        <Section id="preface" title="Предисловие. Зачем этот отчёт">
+        <Section
+          id="preface"
+          title="Предисловие. Зачем этот отчёт"
+          imageSrc={`${sectionImageBase}01.png`}
+          imageAlt="Иллюстрация к предисловию отчета"
+        >
           <p className="mb-4">
             На протяжении двух последних лет я наблюдаю одну и ту же сцену в разных декорациях. Мебельная фабрика принимает решение выйти на маркетплейсы или уже вышла, но что-то пошло не так. Активность высокая: фотографируют каталог, пишут карточки, нанимают менеджера по WB, настраивают рекламу, смотрят на CTR. А через полгода наступает разочарование: либо нет продаж, либо убыток. Но есть кто счастлив — за счет иллюзии успеха при плохой юнит-экономике.
           </p>
@@ -302,7 +309,12 @@ function App() {
         </Section>
 
         {/* Part I */}
-        <Section id="part1" title="Часть I. Три уровня Маркетинга">
+        <Section
+          id="part1"
+          title="Часть I. Три уровня Маркетинга"
+          imageSrc={`${sectionImageBase}02.png`}
+          imageAlt="Иллюстрация про три уровня маркетинга"
+        >
           <p className="mb-6">
             Прежде чем перейти к цифрам, давайте договоримся о терминах. Я намеренно разделяю три уровня, которые в мебельной отрасли стабильно смешивают в одну кашу.
           </p>
@@ -388,7 +400,12 @@ function App() {
         </Section>
 
         {/* Part II */}
-        <Section id="part2" title="Часть II. Контекст: что произошло с рынком за шесть лет">
+        <Section
+          id="part2"
+          title="Часть II. Контекст: что произошло с рынком за шесть лет"
+          imageSrc={`${sectionImageBase}03.png`}
+          imageAlt="Иллюстрация миграции спроса между платформами"
+        >
           <p className="mb-6">
             Этот отчёт опирается на массив открытых данных по мебельному спросу и продажам.
             Ключевой тезис: <strong>спрос на мебель не исчез — он мигрировал с Яндекса на маркетплейсы</strong>.
@@ -412,7 +429,12 @@ function App() {
         </Section>
 
         {/* Part III */}
-        <Section id="part3" title="Часть III. Проблема сравнения трёх платформ: методологическое отступление">
+        <Section
+          id="part3"
+          title="Часть III. Проблема сравнения трёх платформ: методологическое отступление"
+          imageSrc={`${sectionImageBase}04.png`}
+          imageAlt="Иллюстрация методологических ограничений сравнения"
+        >
           <p className="mb-6">
             Прежде чем переходить к данным по трём маркетплейсам, необходимо остановиться на том, что кажется технической деталью, но на самом деле является принципиальным вопросом: <strong>три платформы измеряют спрос по-разному</strong>.
           </p>
@@ -446,7 +468,12 @@ function App() {
         </Section>
 
         {/* Part IV */}
-        <Section id="part4" title="Часть IV. Где ищут: сравнение поискового спроса WB vs Ozon">
+        <Section
+          id="part4"
+          title="Часть IV. Где ищут: сравнение поискового спроса WB vs Ozon"
+          imageSrc={`${sectionImageBase}05.png`}
+          imageAlt="Иллюстрация поискового спроса на WB и Ozon"
+        >
           <h3 className="text-xl font-bold mt-4 mb-4">Общая картина по категориям</h3>
           <DataTable columns={searchGeneralColumns} data={searchGeneralData} />
           <p className="text-sm text-[#6B6B6B] mt-4">
@@ -484,7 +511,12 @@ function App() {
         </Section>
 
         {/* Part V */}
-        <Section id="part5" title="Часть V. Где листают: WB vs Яндекс.Маркет по кликам в карточку">
+        <Section
+          id="part5"
+          title="Часть V. Где листают: WB vs Яндекс.Маркет по кликам в карточку"
+          imageSrc={`${sectionImageBase}06.png`}
+          imageAlt="Иллюстрация сравнения кликов в карточку"
+        >
           <p className="mb-6">
             Ozon на этом уровне анализа выпадает — метрики кликов в карточку в его выгрузке нет. Сравниваем WB «перешли в карточку» с YM «клики»: это однородные метрики, обе означают физическое открытие карточки товара.
           </p>
@@ -510,7 +542,12 @@ function App() {
         </Section>
 
         {/* Part VI */}
-        <Section id="part6" title="Часть VI. Где деньги: сравнение выручки WB и Ozon">
+        <Section
+          id="part6"
+          title="Часть VI. Где деньги: сравнение выручки WB и Ozon"
+          imageSrc={`${sectionImageBase}07.png`}
+          imageAlt="Иллюстрация перехода от спроса к выручке"
+        >
           <p className="mb-6">
             Здесь начинается самое неожиданное. На основании данных о поиске закономерный вывод: WB доминирует. 60% запросов — не значит 60% рынка, ведь когда к анализу добавляются данные о продажах, картина меняется.
           </p>
@@ -540,7 +577,12 @@ function App() {
         </Section>
 
         {/* Part VII */}
-        <Section id="part7" title="Часть VII. Брендовый трафик: кто где существует">
+        <Section
+          id="part7"
+          title="Часть VII. Брендовый трафик: кто где существует"
+          imageSrc={`${sectionImageBase}08.png`}
+          imageAlt="Иллюстрация брендового трафика"
+        >
           <p className="mb-6">
             Анализ не был бы полным без брендового измерения. Здесь три источника объединяются: WB и Ozon (запросы, прямое сравнение) + Яндекс.Маркет (показы и клики, косвенная узнаваемость) + Яндекс.Wordstat (историческая динамика brand-search за 6 лет).
           </p>
@@ -589,7 +631,12 @@ function App() {
         </Section>
 
         {/* Part VIII */}
-        <Section id="part8" title="Часть VIII. Стратегическая матрица «с чем и куда»">
+        <Section
+          id="part8"
+          title="Часть VIII. Стратегическая матрица «с чем и куда»"
+          imageSrc={`${sectionImageBase}09.png`}
+          imageAlt="Иллюстрация стратегической матрицы"
+        >
           <p className="mb-6">
             Собираем три уровня данных (поиск, клики, выручка) в единую логику принятия решений.
           </p>
@@ -636,7 +683,12 @@ function App() {
         </Section>
 
         {/* Part IX */}
-        <Section id="part9" title="Часть IX. Чего в этом отчёте нет, намеренно">
+        <Section
+          id="part9"
+          title="Часть IX. Чего в этом отчёте нет, намеренно"
+          imageSrc={`${sectionImageBase}10.png`}
+          imageAlt="Иллюстрация ограничений текущего отчета"
+        >
           <p className="mb-6">
             Этот отчёт работает на категориальных данных и показывает <strong>общую структуру рынка</strong>. Это фундамент стратегии: необходимый, но не достаточный. Вот что остаётся за рамками и что является обязательным элементом полноценного стратегического анализа для конкретной фабрики.
           </p>
@@ -663,7 +715,12 @@ function App() {
         </Section>
 
         {/* Conclusion */}
-        <Section id="conclusion" title="Вместо заключения: три вопроса для директора фабрики">
+        <Section
+          id="conclusion"
+          title="Вместо заключения: три вопроса для директора фабрики"
+          imageSrc={`${sectionImageBase}11.png`}
+          imageAlt="Иллюстрация к заключению"
+        >
           <p className="mb-6">
             Если вы дочитали до этого места, предлагаю задать себе три вопроса и честно на них ответить.
           </p>
@@ -691,7 +748,12 @@ function App() {
         </Section>
 
         {/* Limitations */}
-        <Section id="limitations" title="Ограничения анализа">
+        <Section
+          id="limitations"
+          title="Ограничения анализа"
+          imageSrc={`${sectionImageBase}12.png`}
+          imageAlt="Иллюстрация методологических ограничений анализа"
+        >
           <p className="mb-4">
             <strong>Период.</strong> WB: 09.02–10.03.2026 (30 дней). Ozon: 11.02–10.03.2026 (28 дней). YM: февраль 2026. Разница в стартовых датах минимальна — влияние на выводы несущественно. WB-данные нормированы на 28 дней для корректного сравнения с Ozon.
           </p>
