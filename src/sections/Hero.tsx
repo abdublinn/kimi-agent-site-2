@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { ArrowDown, MessageCircle } from 'lucide-react';
+import { ArrowDown, BookOpen, MessageCircle } from 'lucide-react';
 
 export function Hero() {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -35,57 +35,102 @@ export function Hero() {
   };
 
   return (
-    <section
-      ref={heroRef}
-      className="min-h-screen flex items-center justify-center bg-white pt-16"
-    >
-      <div className="container-main text-center max-w-4xl">
-        <div className="animate-item">
-          <span className="inline-block px-3 py-1 text-xs font-medium text-[#6B6B6B] bg-gray-100 rounded-full mb-6">
-            Март 2026
-          </span>
-        </div>
+    <section ref={heroRef} className="relative min-h-screen pt-20 pb-14 overflow-hidden bg-[#0F2344]">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(70,110,180,.35),transparent_45%),radial-gradient(circle_at_90%_15%,rgba(80,120,200,.25),transparent_40%)]" />
+      <div className="absolute -left-32 top-1/2 h-px w-[160%] -translate-y-24 rotate-[-18deg] bg-white/10" />
+      <div className="absolute -left-32 top-1/2 h-px w-[160%] translate-y-24 rotate-[-18deg] bg-white/10" />
+      <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-white/20 to-transparent" />
 
-        <h1 className="animate-item text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1A1A1A] leading-tight mb-6">
-          Маркетплейсы для мебельной фабрики:
-          <br />
-          <span className="text-[#E53935]">стратегия</span> vs.{' '}
-          <span className="text-[#6B6B6B]">тактика</span>
-        </h1>
+      <div className="container-main relative z-10">
+        <div className="grid lg:grid-cols-[1fr_340px] gap-10 items-center max-w-6xl mx-auto">
+          <div>
+            <div className="animate-item">
+              <span className="inline-block px-3 py-1 text-xs font-medium text-white/80 bg-white/10 rounded-full mb-6">
+                Март 2026
+              </span>
+            </div>
 
-        <p className="animate-item text-lg sm:text-xl text-[#6B6B6B] mb-8 max-w-2xl mx-auto">
-          Данные, методология и выводы для тех, кто хочет выйти правильно
-        </p>
+            <h1 className="animate-item text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-5">
+              Маркетплейсы для мебельной фабрики:
+              <br />
+              <span className="text-[#F59E0B]">стратегия</span> vs. <span className="text-white/70">тактика</span>
+            </h1>
 
-        <div className="animate-item flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-          <button
-            onClick={scrollToContent}
-            className="inline-flex items-center gap-2 px-6 py-3 bg-[#E53935] text-white font-medium rounded-lg hover:bg-red-600 transition-all hover:scale-[1.02] active:scale-[0.98]"
-          >
-            Читать отчет
-            <ArrowDown className="w-4 h-4" />
-          </button>
-          <a
-            href="https://t.me/AleksandrBorisovich73"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 border-2 border-[#E53935] text-[#E53935] font-medium rounded-lg hover:bg-red-50 transition-all hover:scale-[1.02] active:scale-[0.98]"
-          >
-            <MessageCircle className="w-4 h-4" />
-            Связаться с автором
-          </a>
-        </div>
+            <p className="animate-item text-lg sm:text-xl text-white/80 mb-8 max-w-2xl">
+              Данные, методология и выводы для тех, кто хочет выйти правильно.
+            </p>
 
-        <div className="animate-item pt-8 border-t border-gray-100">
-          <p className="text-sm text-[#6B6B6B]">
-            Автор:{' '}
-            <span className="font-semibold text-[#1A1A1A]">
-              Александр Борисович Дублин
-            </span>
-          </p>
-          <p className="text-xs text-[#6B6B6B] mt-1">
-            Бизнес-аналитик и консультант
-          </p>
+            <div className="animate-item flex flex-wrap items-center gap-4 mb-10">
+              <button
+                onClick={scrollToContent}
+                className="inline-flex items-center gap-2 px-6 py-3 bg-[#F59E0B] text-white font-semibold rounded-lg hover:bg-amber-500 transition-all hover:scale-[1.02] active:scale-[0.98]"
+              >
+                Читать отчет
+                <ArrowDown className="w-4 h-4" />
+              </button>
+              <a
+                href="https://t.me/AleksandrBorisovich73"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 border border-white/30 text-white font-medium rounded-lg hover:bg-white/10 transition-all"
+              >
+                <MessageCircle className="w-4 h-4" />
+                Связаться с автором
+              </a>
+            </div>
+
+            <div id="about-author" className="animate-item bg-white/10 border border-white/15 backdrop-blur-sm rounded-2xl p-5 lg:p-6">
+              <div className="flex flex-col sm:flex-row gap-4 sm:items-center">
+                <img
+                  src="/images/author-photo.png"
+                  alt="Александр Борисович Дублин"
+                  className="w-24 h-24 rounded-xl object-cover border border-white/20"
+                />
+                <div>
+                  <p className="text-white text-xl font-semibold">Александр Борисович Дублин</p>
+                  <p className="text-white/80 text-sm mt-1">
+                    Бизнес-аналитик и консультант. Маркетинг с большой буквы М: стратегия, позиционирование, аналитика рынка.
+                  </p>
+                  <div className="flex flex-wrap gap-3 mt-3 text-xs">
+                    <span className="px-2.5 py-1 rounded-full bg-white/10 text-white/85">Системный анализ</span>
+                    <span className="px-2.5 py-1 rounded-full bg-white/10 text-white/85">Маркетплейсы</span>
+                    <span className="px-2.5 py-1 rounded-full bg-white/10 text-white/85">Стратегия бренда</span>
+                  </div>
+                  <div className="flex flex-wrap gap-3 mt-4">
+                    <a
+                      href="https://t.me/ab_dublin"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-white/90 hover:text-white text-sm"
+                    >
+                      <BookOpen className="w-4 h-4" />
+                      Telegram-канал
+                    </a>
+                    <a
+                      href="https://dzen.ru/dbs_dubas"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-white/90 hover:text-white text-sm"
+                    >
+                      <BookOpen className="w-4 h-4" />
+                      Блог на Дзене
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="animate-item hidden lg:block">
+            <div className="w-64 xl:w-72 mx-auto rounded-2xl overflow-hidden border border-white/20 shadow-2xl">
+              <img
+                src="/images/author-hero.png"
+                alt="Александр Борисович Дублин"
+                className="w-full h-[380px] object-cover"
+              />
+            </div>
+            <p className="text-center text-white/70 mt-3 text-sm">Александр Дублин</p>
+          </div>
         </div>
       </div>
     </section>

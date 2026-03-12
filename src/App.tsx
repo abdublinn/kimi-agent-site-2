@@ -4,7 +4,6 @@ import { Quote } from './sections/Quote';
 import { Section } from './components/Section';
 import { DataTable } from './components/DataTable';
 import { InteractiveInsights } from './components/InteractiveInsights';
-import { AboutAuthor } from './sections/AboutAuthor';
 import { Footer } from './sections/Footer';
 
 // Table column definitions
@@ -709,7 +708,6 @@ function App() {
         </Section>
 
         <InteractiveInsights />
-        <AboutAuthor />
       </main>
 
       <Footer />

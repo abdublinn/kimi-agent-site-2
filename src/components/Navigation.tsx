@@ -12,7 +12,6 @@ const navLinks = [
   { label: 'VII. Бренды', href: '#part7' },
   { label: 'VIII. Матрица', href: '#part8' },
   { label: 'IX. Ограничения', href: '#part9' },
-  { label: 'Обо мне', href: '#about-author' },
 ];
 
 export function Navigation() {
@@ -76,7 +75,9 @@ export function Navigation() {
                 e.preventDefault();
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
-              className="text-sm font-semibold text-[#1A1A1A] hover:text-[#E53935] transition-colors"
+              className={`text-sm font-semibold transition-colors ${
+                isScrolled ? 'text-[#1A1A1A] hover:text-[#E53935]' : 'text-white hover:text-white/80'
+              }`}
             >
               Отчет по стратегии
             </a>
@@ -91,7 +92,9 @@ export function Navigation() {
                   className={`px-2 py-1.5 text-xs font-medium rounded transition-colors whitespace-nowrap ${
                     activeSection === link.href.slice(1)
                       ? 'text-[#E53935] bg-red-50'
-                      : 'text-[#6B6B6B] hover:text-[#1A1A1A] hover:bg-gray-100'
+                      : isScrolled
+                      ? 'text-[#6B6B6B] hover:text-[#1A1A1A] hover:bg-gray-100'
+                      : 'text-white/80 hover:text-white hover:bg-white/10'
                   }`}
                 >
                   {link.label}
@@ -102,7 +105,9 @@ export function Navigation() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="xl:hidden p-2 text-[#1A1A1A] hover:text-[#E53935] transition-colors"
+              className={`xl:hidden p-2 transition-colors ${
+                isScrolled ? 'text-[#1A1A1A] hover:text-[#E53935]' : 'text-white hover:text-white/80'
+              }`}
               aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
