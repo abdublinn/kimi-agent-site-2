@@ -3,6 +3,8 @@ import { Hero } from './sections/Hero';
 import { Quote } from './sections/Quote';
 import { Section } from './components/Section';
 import { DataTable } from './components/DataTable';
+import { InteractiveInsights } from './components/InteractiveInsights';
+import { AboutAuthor } from './sections/AboutAuthor';
 import { Footer } from './sections/Footer';
 
 // Table column definitions
@@ -387,7 +389,9 @@ function App() {
         {/* Part II */}
         <Section id="part2" title="Часть II. Контекст: что произошло с рынком за шесть лет">
           <p className="mb-6">
-            Этот отчёт опирается на большое исследование <a href="https://t.me/ab_dublin" target="_blank" rel="noopener noreferrer" className="text-[#1976D2] hover:underline">«Передел: мебельный рынок в эпоху маркетплейсов. 2018–2026»</a>. Ключевой тезис той работы: <strong>спрос на мебель не исчез — он мигрировал с Яндекса на маркетплейсы</strong>. Здесь фиксируем только самое важное для понимания текущей ситуации.
+            Этот отчёт опирается на массив открытых данных по мебельному спросу и продажам.
+            Ключевой тезис: <strong>спрос на мебель не исчез — он мигрировал с Яндекса на маркетплейсы</strong>.
+            Здесь фиксируем только самое важное для понимания текущей ситуации.
           </p>
 
           <h3 className="text-xl font-bold mt-8 mb-4">Обвал товарных запросов в Яндексе</h3>
@@ -703,6 +707,9 @@ function App() {
             <strong>Агрегация по категориям, не подкатегориям.</strong> Средний чек по «диванам» — это средняя температура по больнице. Реальная стратегия требует детализации до ценовых сегментов.
           </p>
         </Section>
+
+        <InteractiveInsights />
+        <AboutAuthor />
       </main>
 
       <Footer />

@@ -84,7 +84,7 @@ export function Hero() {
             </span>
           </p>
           <p className="text-xs text-[#6B6B6B] mt-1">
-            Бизнес-аналитик и стратегический консультант
+            Бизнес-аналитик и консультант
           </p>
         </div>
       </div>

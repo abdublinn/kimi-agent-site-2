@@ -1,4 +1,4 @@
-import { MessageCircle, BookOpen, ExternalLink, FileText } from 'lucide-react';
+import { MessageCircle, BookOpen } from 'lucide-react';
 
 export function Footer() {
   return (
@@ -7,7 +7,7 @@ export function Footer() {
         <div className="text-center mb-8">
           <h3 className="text-xl font-bold mb-2">Александр Борисович Дублин</h3>
           <p className="text-white/70 text-sm">
-            Бизнес-аналитик и стратегический консультант
+            Бизнес-аналитик и консультант
           </p>
           <p className="text-white/50 text-xs mt-1">
             Специализация: системный анализ рынков, маркетинговые стратегии, управленческий учёт, методологии принятия решений
@@ -31,17 +31,16 @@ export function Footer() {
             className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 rounded-lg hover:bg-white/20 transition-colors text-sm"
           >
             <BookOpen className="w-4 h-4" />
-            Блог
+            Telegram-блог
           </a>
           <a
-            href="https://dbpjwctanie3w.ok.kimi.link/"
+            href="https://dzen.ru/dbs_dubas"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 rounded-lg hover:bg-white/20 transition-colors text-sm"
           >
-            <FileText className="w-4 h-4" />
-            Первый отчет
-            <ExternalLink className="w-3 h-3" />
+            <BookOpen className="w-4 h-4" />
+            Блог на Дзене
           </a>
         </div>
 

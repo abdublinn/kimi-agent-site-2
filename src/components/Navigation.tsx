@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, ExternalLink } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 const navLinks = [
-  { label: 'Передел', href: 'https://dbpjwctanie3w.ok.kimi.link/', external: true },
   { label: 'Предисловие', href: '#preface' },
   { label: 'I. Три уровня', href: '#part1' },
   { label: 'II. Контекст', href: '#part2' },
@@ -13,6 +12,7 @@ const navLinks = [
   { label: 'VII. Бренды', href: '#part7' },
   { label: 'VIII. Матрица', href: '#part8' },
   { label: 'IX. Ограничения', href: '#part9' },
+  { label: 'Обо мне', href: '#about-author' },
 ];
 
 export function Navigation() {
@@ -25,7 +25,7 @@ export function Navigation() {
       setIsScrolled(window.scrollY > 50);
       
       // Determine active section
-      const sections = navLinks.filter(l => !l.external).map(l => l.href.slice(1));
+      const sections = navLinks.map((l) => l.href.slice(1));
       for (const section of sections.reverse()) {
         const element = document.getElementById(section);
         if (element) {
@@ -71,13 +71,14 @@ export function Navigation() {
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <a
-              href="https://dbpjwctanie3w.ok.kimi.link/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm font-semibold text-[#1A1A1A] hover:text-[#E53935] transition-colors flex items-center gap-1"
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+              className="text-sm font-semibold text-[#1A1A1A] hover:text-[#E53935] transition-colors"
             >
-              Передел
-              <ExternalLink className="w-3 h-3" />
+              Отчет по стратегии
             </a>
 
             {/* Desktop Navigation */}
@@ -86,13 +87,9 @@ export function Navigation() {
                 <a
                   key={link.href}
                   href={link.href}
-                  target={link.external ? '_blank' : undefined}
-                  rel={link.external ? 'noopener noreferrer' : undefined}
-                  onClick={(e) => handleLinkClick(e, link.href, link.external)}
+                  onClick={(e) => handleLinkClick(e, link.href)}
                   className={`px-2 py-1.5 text-xs font-medium rounded transition-colors whitespace-nowrap ${
-                    link.external
-                      ? 'text-[#6B6B6B] hover:text-[#E53935]'
-                      : activeSection === link.href.slice(1)
+                    activeSection === link.href.slice(1)
                       ? 'text-[#E53935] bg-red-50'
                       : 'text-[#6B6B6B] hover:text-[#1A1A1A] hover:bg-gray-100'
                   }`}
@@ -137,21 +134,14 @@ export function Navigation() {
                 <a
                   key={link.href}
                   href={link.href}
-                  target={link.external ? '_blank' : undefined}
-                  rel={link.external ? 'noopener noreferrer' : undefined}
-                  onClick={(e) => handleLinkClick(e, link.href, link.external)}
+                  onClick={(e) => handleLinkClick(e, link.href)}
                   className={`px-4 py-3 text-sm font-medium rounded-lg transition-colors ${
-                    link.external
-                      ? 'text-[#6B6B6B] hover:text-[#E53935] hover:bg-gray-50'
-                      : activeSection === link.href.slice(1)
+                    activeSection === link.href.slice(1)
                       ? 'text-[#E53935] bg-red-50'
                       : 'text-[#1A1A1A] hover:bg-gray-100'
                   }`}
                 >
-                  <div className="flex items-center gap-2">
-                    {link.label}
-                    {link.external && <ExternalLink className="w-3 h-3" />}
-                  </div>
+                  <div className="flex items-center gap-2">{link.label}</div>
                 </a>
               ))}
             </div>
